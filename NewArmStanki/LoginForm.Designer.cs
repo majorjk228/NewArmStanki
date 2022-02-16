@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.CloseButton = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.LoginField = new System.Windows.Forms.TextBox();
+            this.PassField = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -52,6 +52,19 @@
             this.panel1.Size = new System.Drawing.Size(374, 107);
             this.panel1.TabIndex = 0;
             // 
+            // CloseButton
+            // 
+            this.CloseButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CloseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CloseButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.CloseButton.Location = new System.Drawing.Point(354, 0);
+            this.CloseButton.Name = "CloseButton";
+            this.CloseButton.Size = new System.Drawing.Size(20, 38);
+            this.CloseButton.TabIndex = 1;
+            this.CloseButton.Text = "X";
+            this.CloseButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
+            // 
             // label1
             // 
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -63,19 +76,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Авторизация";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // CloseButton
-            // 
-            this.CloseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CloseButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.CloseButton.Location = new System.Drawing.Point(354, 0);
-            this.CloseButton.Name = "CloseButton";
-            this.CloseButton.Size = new System.Drawing.Size(20, 38);
-            this.CloseButton.TabIndex = 1;
-            this.CloseButton.Text = "X";
-            this.CloseButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.CloseButton.Click += new System.EventHandler(this.label1_Click);
             // 
             // pictureBox1
             // 
@@ -87,24 +87,26 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // textBox1
+            // LoginField
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.Location = new System.Drawing.Point(128, 132);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(214, 72);
-            this.textBox1.TabIndex = 2;
+            this.LoginField.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LoginField.Location = new System.Drawing.Point(128, 132);
+            this.LoginField.Multiline = true;
+            this.LoginField.Name = "LoginField";
+            this.LoginField.Size = new System.Drawing.Size(214, 57);
+            this.LoginField.TabIndex = 2;
+            this.LoginField.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox2
+            // PassField
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox2.Location = new System.Drawing.Point(128, 239);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(214, 72);
-            this.textBox2.TabIndex = 3;
-            this.textBox2.UseSystemPasswordChar = true;
+            this.PassField.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.PassField.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.PassField.Location = new System.Drawing.Point(128, 239);
+            this.PassField.Name = "PassField";
+            this.PassField.Size = new System.Drawing.Size(214, 44);
+            this.PassField.TabIndex = 3;
+            this.PassField.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.PassField.UseSystemPasswordChar = true;
             // 
             // pictureBox2
             // 
@@ -140,8 +142,8 @@
             this.ClientSize = new System.Drawing.Size(374, 413);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.PassField);
+            this.Controls.Add(this.LoginField);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
             this.Name = "LoginForm";
@@ -160,8 +162,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label CloseButton;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox LoginField;
+        private System.Windows.Forms.TextBox PassField;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button button1;
     }

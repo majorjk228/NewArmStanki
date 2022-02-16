@@ -15,9 +15,13 @@ namespace NewArmStanki
         public LoginForm()
         {
             InitializeComponent();
+
+            this.PassField.AutoSize = false;
+            this.PassField.Size = new Size(this.PassField.Size.Width, 57);
         }
 
-        private void label1_Click(object sender, EventArgs e)
+
+        private void CloseButton_Click(object sender, EventArgs e)
         {
             this.Close();
         }
