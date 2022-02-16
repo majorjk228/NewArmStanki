@@ -64,6 +64,8 @@
             this.CloseButton.Text = "X";
             this.CloseButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
+            this.CloseButton.MouseEnter += new System.EventHandler(this.CloseButton_MouseEnter);
+            this.CloseButton.MouseLeave += new System.EventHandler(this.CloseButton_MouseLeave);
             // 
             // label1
             // 
@@ -76,6 +78,7 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Авторизация";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.label1_MouseMove);
             // 
             // pictureBox1
             // 
@@ -149,6 +152,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "LoginForm";
             this.Text = "LoginForm";
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.LoginForm_MouseMove);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
