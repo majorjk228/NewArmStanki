@@ -31,14 +31,14 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.CloseButton = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.LoginField = new System.Windows.Forms.TextBox();
             this.PassField = new System.Windows.Forms.TextBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.buttonLogin = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -52,20 +52,12 @@
             this.panel1.Size = new System.Drawing.Size(374, 107);
             this.panel1.TabIndex = 0;
             // 
-            // CloseButton (Крестик на самой программе, пока закрыл, не использую)
+            // CloseButton
             // 
-           /* this.CloseButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CloseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CloseButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.CloseButton.Location = new System.Drawing.Point(354, 0);
+            this.CloseButton.Location = new System.Drawing.Point(0, 0);
             this.CloseButton.Name = "CloseButton";
-            this.CloseButton.Size = new System.Drawing.Size(20, 38);
-            this.CloseButton.TabIndex = 1;
-            this.CloseButton.Text = "X";
-            this.CloseButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
-            this.CloseButton.MouseEnter += new System.EventHandler(this.CloseButton_MouseEnter);
-            this.CloseButton.MouseLeave += new System.EventHandler(this.CloseButton_MouseLeave);*/
+            this.CloseButton.Size = new System.Drawing.Size(100, 23);
+            this.CloseButton.TabIndex = 0;
             // 
             // label1
             // 
@@ -78,17 +70,8 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Авторизация";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             this.label1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.label1_MouseMove);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::NewArmStanki.Properties.Resources._285655_user_icon;
-            this.pictureBox1.Location = new System.Drawing.Point(29, 132);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(77, 72);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
             // 
             // LoginField
             // 
@@ -99,6 +82,7 @@
             this.LoginField.Size = new System.Drawing.Size(214, 57);
             this.LoginField.TabIndex = 2;
             this.LoginField.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.LoginField.TextChanged += new System.EventHandler(this.LoginField_TextChanged);
             // 
             // PassField
             // 
@@ -110,16 +94,7 @@
             this.PassField.TabIndex = 3;
             this.PassField.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.PassField.UseSystemPasswordChar = true;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::NewArmStanki.Properties.Resources._299105_lock_icon;
-            this.pictureBox2.Location = new System.Drawing.Point(29, 239);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(77, 72);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 4;
-            this.pictureBox2.TabStop = false;
+            this.PassField.TextChanged += new System.EventHandler(this.PassField_TextChanged);
             // 
             // buttonLogin
             // 
@@ -138,6 +113,26 @@
             this.buttonLogin.UseVisualStyleBackColor = true;
             this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::NewArmStanki.Properties.Resources._299105_lock_icon;
+            this.pictureBox2.Location = new System.Drawing.Point(29, 239);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(77, 72);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 4;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::NewArmStanki.Properties.Resources._285655_user_icon;
+            this.pictureBox1.Location = new System.Drawing.Point(29, 132);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(77, 72);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -152,11 +147,13 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
             this.Name = "LoginForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoginForm";
+            this.Load += new System.EventHandler(this.LoginForm_Load);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.LoginForm_MouseMove);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
