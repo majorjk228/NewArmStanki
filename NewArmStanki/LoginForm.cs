@@ -80,7 +80,7 @@ namespace NewArmStanki
 
             MySqlDataAdapter adapter = new MySqlDataAdapter();
 
-            MySqlCommand command = new MySqlCommand("select * from users where login = '@uL' and password = '@uP'", db.getConnection()); //команды для БД(защита от взлома)
+            MySqlCommand command = new MySqlCommand("select * from users where login = @uL and password = @uP", db.getConnection()); //команды для БД(защита от взлома)
             command.Parameters.Add("@uL", MySqlDbType.VarChar).Value = loginUser; //Указываю заместо заглушки беру данные из переменной
             command.Parameters.Add("@uP", MySqlDbType.VarChar).Value = passwordUser; //Указываю заместо заглушки беру данные из переменной
 

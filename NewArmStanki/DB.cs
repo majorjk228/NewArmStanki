@@ -18,13 +18,13 @@ namespace NewArmStanki
         public void openConnection()
         {
             if(connection.State == System.Data.ConnectionState.Closed) //Если не подклчена
-                connection.Open();  //Подключаюсь к бд
+            connection.Open();  //Подключаюсь к бд
         }
 
         public void closeConnection()
         {
             if (connection.State == System.Data.ConnectionState.Open) //Если подключена
-                connection.Close();  //Отключаюсь к бд
+            connection.Close();  //Отключаюсь к бд
         }
 
         public MySqlConnection getConnection() //Возвращает само соединение С БД
