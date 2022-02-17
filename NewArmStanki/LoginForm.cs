@@ -88,30 +88,16 @@ namespace NewArmStanki
             adapter.Fill(dataTable); //Данные которые получили, положили в дата тейбл, Обращаюсь к каждому элементу БД
 
             if (dataTable.Rows.Count > 0) //Сколько есть записей
-                MessageBox.Show("Удачная авторизация");
+            {
+                MessageBox.Show("Успешная авторизация");
+                this.Hide();
+                MainForm MainForm = new MainForm();
+                MainForm.Show();
+            }
             else
-                MessageBox.Show("Не удалось авторизоваться");
-
-        }
-
-        private void LoginForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LoginField_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void PassField_TextChanged(object sender, EventArgs e)
-        {
-
+                MessageBox.Show("Не удалось авторизоваться, попробуйте еще раз!");
+            LoginField.Text = null; //Чистим прошлые данные
+            PassField.Text = null;
         }
     }
 }

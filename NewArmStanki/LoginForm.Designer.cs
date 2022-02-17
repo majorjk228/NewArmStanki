@@ -70,7 +70,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Авторизация";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             this.label1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.label1_MouseMove);
             // 
             // LoginField
@@ -82,7 +81,6 @@
             this.LoginField.Size = new System.Drawing.Size(214, 57);
             this.LoginField.TabIndex = 2;
             this.LoginField.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.LoginField.TextChanged += new System.EventHandler(this.LoginField_TextChanged);
             // 
             // PassField
             // 
@@ -94,7 +92,6 @@
             this.PassField.TabIndex = 3;
             this.PassField.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.PassField.UseSystemPasswordChar = true;
-            this.PassField.TextChanged += new System.EventHandler(this.PassField_TextChanged);
             // 
             // buttonLogin
             // 
@@ -105,7 +102,7 @@
             this.buttonLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(210)))), ((int)(((byte)(165)))));
             this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonLogin.Location = new System.Drawing.Point(128, 335);
+            this.buttonLogin.Location = new System.Drawing.Point(128, 328);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(169, 49);
             this.buttonLogin.TabIndex = 5;
@@ -149,7 +146,6 @@
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoginForm";
-            this.Load += new System.EventHandler(this.LoginForm_Load);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.LoginForm_MouseMove);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
