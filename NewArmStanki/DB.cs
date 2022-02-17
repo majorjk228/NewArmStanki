@@ -9,7 +9,7 @@ namespace NewArmStanki
 {
     internal class DB
     {
-        MySqlConnection connection = new MySqlConnection("server=localhost;username=root;database=test");
+        MySqlConnection connection = new MySqlConnection("server=localhost;username=root;database=test"); //Подключение к бд 
 
          public void openConnection()
         {
@@ -23,7 +23,7 @@ namespace NewArmStanki
                 connection.Close();  //Отключаюсь к бд
         }
 
-        public MySqlConnection getConnection()
+        public MySqlConnection getConnection() //Возвращает само соединение С БД
         {
             return connection;
         }

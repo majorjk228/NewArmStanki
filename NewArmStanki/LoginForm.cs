@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -66,6 +67,31 @@ namespace NewArmStanki
             label1.Capture = false;
             Message m = Message.Create(Handle, 0xa1, new IntPtr(2), IntPtr.Zero);
             WndProc(ref m);
+        }
+
+        private void buttonLogin_Click(object sender, EventArgs e)
+        {
+            String loginUser = LoginField.Text; //забираем логин
+            String passwordUser = PassField.Text; //забираем пасс
+
+            DB db = new DB();   //Создали несколько объектов
+
+            DataTable dataTable = new DataTable();
+
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+
+            MySqlCommand command = new MySqlCommand("select * from users where login = '@uL' and password = '@uP'", db.getConnection()); //команды для БД(защита от взлома)
+            command.Parameters.Add("@uL", MySqlDbType.VarChar).Value = loginUser; //Указываю заместо заглушки беру данные из переменной
+            command.Parameters.Add("@uP", MySqlDbType.VarChar).Value = passwordUser; //Указываю заместо заглушки беру данные из переменной
+
+            adapter.SelectCommand = command; // выбрали нужную команду и выполнили
+            adapter.Fill(dataTable); //Данные которые получили, положили в дата тейбл, Обращаюсь к каждому элементу БД
+
+            if (dataTable.Rows.Count > 0) //Сколько есть записей
+                MessageBox.Show("Удачная авторизация");
+            else
+                MessageBox.Show("Не удалось авторизоваться");
+
         }
     }
 }
