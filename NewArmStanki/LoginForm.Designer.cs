@@ -52,9 +52,9 @@
             this.panel1.Size = new System.Drawing.Size(374, 107);
             this.panel1.TabIndex = 0;
             // 
-            // CloseButton
+            // CloseButton (Крестик на самой программе, пока закрыл, не использую)
             // 
-            this.CloseButton.Cursor = System.Windows.Forms.Cursors.Hand;
+           /* this.CloseButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CloseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.CloseButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.CloseButton.Location = new System.Drawing.Point(354, 0);
@@ -65,7 +65,7 @@
             this.CloseButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
             this.CloseButton.MouseEnter += new System.EventHandler(this.CloseButton_MouseEnter);
-            this.CloseButton.MouseLeave += new System.EventHandler(this.CloseButton_MouseLeave);
+            this.CloseButton.MouseLeave += new System.EventHandler(this.CloseButton_MouseLeave);*/
             // 
             // label1
             // 
