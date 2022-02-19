@@ -32,7 +32,7 @@ namespace NewArmStanki
             if (command.ExecuteNonQuery() == 1) //Если подключение удачное то вывдеется текст
                 MessageBox.Show("Запись добавлена");
             else
-                MessageBox.Show("Запись Не Добавлена");
+                MessageBox.Show("Запись Не Добавлена", "Ошибка");
 
             db.closeConnection(); //Закрываем соединение с БД (Необходимо чтобы снизить загрузку на бд
         }

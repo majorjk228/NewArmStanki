@@ -35,6 +35,9 @@
             this.buttonEditDep = new System.Windows.Forms.Button();
             this.textBoxEditDep = new System.Windows.Forms.TextBox();
             this.LabelEditDep = new System.Windows.Forms.Label();
+            this.buttonEditDep2 = new System.Windows.Forms.Button();
+            this.textBoxEditDep2 = new System.Windows.Forms.TextBox();
+            this.label1EditDep2 = new System.Windows.Forms.Label();
             this.panelMainForm.SuspendLayout();
             this.panelMainForm2Blue.SuspendLayout();
             this.SuspendLayout();
@@ -72,6 +75,9 @@
             // panelMainForm2Blue
             // 
             this.panelMainForm2Blue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(144)))), ((int)(((byte)(208)))));
+            this.panelMainForm2Blue.Controls.Add(this.buttonEditDep2);
+            this.panelMainForm2Blue.Controls.Add(this.textBoxEditDep2);
+            this.panelMainForm2Blue.Controls.Add(this.label1EditDep2);
             this.panelMainForm2Blue.Controls.Add(this.buttonEditDep);
             this.panelMainForm2Blue.Controls.Add(this.textBoxEditDep);
             this.panelMainForm2Blue.Controls.Add(this.LabelEditDep);
@@ -115,6 +121,40 @@
             this.LabelEditDep.TabIndex = 0;
             this.LabelEditDep.Text = "Редактировать подразделение";
             // 
+            // buttonEditDep2
+            // 
+            this.buttonEditDep2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonEditDep2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(210)))), ((int)(((byte)(165)))));
+            this.buttonEditDep2.FlatAppearance.BorderSize = 2;
+            this.buttonEditDep2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.buttonEditDep2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(210)))), ((int)(((byte)(165)))));
+            this.buttonEditDep2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonEditDep2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonEditDep2.Location = new System.Drawing.Point(435, 163);
+            this.buttonEditDep2.Name = "buttonEditDep2";
+            this.buttonEditDep2.Size = new System.Drawing.Size(112, 44);
+            this.buttonEditDep2.TabIndex = 9;
+            this.buttonEditDep2.Text = "Изменить";
+            this.buttonEditDep2.UseVisualStyleBackColor = true;
+            // 
+            // textBoxEditDep2
+            // 
+            this.textBoxEditDep2.Location = new System.Drawing.Point(12, 163);
+            this.textBoxEditDep2.Multiline = true;
+            this.textBoxEditDep2.Name = "textBoxEditDep2";
+            this.textBoxEditDep2.Size = new System.Drawing.Size(401, 44);
+            this.textBoxEditDep2.TabIndex = 8;
+            // 
+            // label1EditDep2
+            // 
+            this.label1EditDep2.AutoSize = true;
+            this.label1EditDep2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1EditDep2.Location = new System.Drawing.Point(12, 118);
+            this.label1EditDep2.Name = "label1EditDep2";
+            this.label1EditDep2.Size = new System.Drawing.Size(429, 31);
+            this.label1EditDep2.TabIndex = 7;
+            this.label1EditDep2.Text = "Редактировать 2 подразделение";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -142,5 +182,8 @@
         private System.Windows.Forms.Label LabelEditDep;
         private System.Windows.Forms.TextBox textBoxEditDep;
         private System.Windows.Forms.Button buttonEditDep;
+        private System.Windows.Forms.Button buttonEditDep2;
+        private System.Windows.Forms.TextBox textBoxEditDep2;
+        private System.Windows.Forms.Label label1EditDep2;
     }
 }

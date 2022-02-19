@@ -18,74 +18,99 @@ namespace NewArmStanki
             InitializeComponent();
 
             this.PassField.AutoSize = false; //дизайн блок в начале
-            this.PassField.Size = new Size(this.PassField.Size.Width, 57);
+            this.PassField.Size = new Size(this.PassField.Size.Width, 46);
+            this.LoginField.Text = "Введите login";
+            this.LoginField.ForeColor = Color.Gray;
+            this.PassField.UseSystemPasswordChar = false;
+            this.PassField.Text = "Введите пароль";
+            this.PassField.ForeColor = Color.Gray;
         }
 
+        //Блок ненужного дизайна
+ /*                 private void CloseButton_Click(object sender, EventArgs e)
+                    {
+                        this.Close();
+                    }
 
-        private void CloseButton_Click(object sender, EventArgs e)
+                    private void CloseButton_MouseEnter(object sender, EventArgs e)
+                    {
+                        CloseButton.ForeColor = Color.Green;
+                    }
+
+                    private void CloseButton_MouseLeave(object sender, EventArgs e)
+                    {
+                        CloseButton.ForeColor = Color.White;
+                    }
+
+                    Point lastPoint;  передвижение формы 
+                    private void LoginForm_MouseMove(object sender, MouseEventArgs e)//передвижение формы
+                    {
+                        if(e.Button == MouseButtons.Left)
+                        {
+                            this.Left += e.X - lastPoint.X;
+                            this.Top += e.Y - lastPoint.Y;
+                        }
+                    }
+
+                    private void LoginForm_MouseDown(object sender, MouseEventArgs e)
+                    {
+                        lastPoint = new Point(e.X, e.Y);    
+                    }
+
+                    private void label1_MouseMove(object sender, MouseEventArgs e) //передвижение формы
+                    {
+                        if (e.Button == MouseButtons.Left)
+                        {
+                            this.Left += e.X - lastPoint.X;
+                            this.Top += e.Y - lastPoint.Y;
+                        }
+                    }
+
+               private void label1_MouseDown(object sender, MouseEventArgs e)
+               {
+                   lastPoint = new Point(e.X, e.Y);
+                   label1.Capture = false;
+                   Message m = Message.Create(Handle, 0xa1, new IntPtr(2), IntPtr.Zero);
+                   WndProc(ref m);
+               }
+       */
+        private void PassField_Click(object sender, EventArgs e)
         {
-            this.Close();
+            PassField.UseSystemPasswordChar = true;
+            PassField.Text = "";
+            PassField.ForeColor = Color.Black;
         }
 
-        private void CloseButton_MouseEnter(object sender, EventArgs e)
+        private void LoginField_Enter(object sender, EventArgs e)
         {
-            CloseButton.ForeColor = Color.Green;
+            LoginField.Text = "";
+            LoginField.ForeColor = Color.Black;
         }
-
-        private void CloseButton_MouseLeave(object sender, EventArgs e)
+        private void LoginField_Leave(object sender, EventArgs e) //Если пустое поле, то просьба ввести логин
         {
-            CloseButton.ForeColor = Color.White;
-        }
-
-        Point lastPoint;
-        private void LoginForm_MouseMove(object sender, MouseEventArgs e)//передвижение формы
-        {
-            if(e.Button == MouseButtons.Left)
+            if (LoginField.Text == "")
             {
-                this.Left += e.X - lastPoint.X;
-                this.Top += e.Y - lastPoint.Y;
+                LoginField.Text = "Введите login";
+                LoginField.ForeColor = Color.Gray;
+                return;
             }
         }
-
-        private void LoginForm_MouseDown(object sender, MouseEventArgs e)
+        private void PassField_Leave(object sender, EventArgs e) //Если пустое поле, то просьба ввести пароль
         {
-            lastPoint = new Point(e.X, e.Y);    
-        }
-
-        private void label1_MouseMove(object sender, MouseEventArgs e) //передвижение формы
-        {
-            if (e.Button == MouseButtons.Left)
+            if (PassField.Text == "")
             {
-                this.Left += e.X - lastPoint.X;
-                this.Top += e.Y - lastPoint.Y;
+                PassField.UseSystemPasswordChar = false;
+                PassField.Text = "Введите пароль";
+                PassField.ForeColor = Color.Gray;
+                return;
             }
         }
-
-        private void label1_MouseDown(object sender, MouseEventArgs e)
-        {
-            lastPoint = new Point(e.X, e.Y);
-            label1.Capture = false;
-            Message m = Message.Create(Handle, 0xa1, new IntPtr(2), IntPtr.Zero);
-            WndProc(ref m);
-        }
-
         private void buttonLogin_Click(object sender, EventArgs e)
         {
             String loginUser = LoginField.Text; //забираем логин
             String passwordUser = PassField.Text; //забираем пасс
 
-            if (loginUser == "") //Проверяю на пустое значение поля
-            {
-                MessageBox.Show("Введите логин");
-                return;
-            }
-/*
-            if (passwordUser == null)
-            {
-                MessageBox.Show("Введите пароль");
-                return;
-            }
-*/
+
             DB db = new DB();   //Создали объект для использования бд
 
             DataTable dataTable = new DataTable();
@@ -108,8 +133,9 @@ namespace NewArmStanki
             }
             else
                 MessageBox.Show("Не удалось авторизоваться, попробуйте еще раз!","Предупреждение");
-                LoginField.Text = null; //Чистим прошлые данные
-                PassField.Text = null;
+                LoginField.Text = loginUser; //оставляю введенный логин
+                PassField.Text = null; //Чищу только пароль
+                return;
         }
 
         private void LoginForm_FormClosing(object sender, FormClosingEventArgs e) //Закрытие приложения (проверка)
