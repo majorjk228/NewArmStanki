@@ -32,7 +32,11 @@
             this.CloseButton = new System.Windows.Forms.Label();
             this.labelMainForm = new System.Windows.Forms.Label();
             this.panelMainForm2Blue = new System.Windows.Forms.Panel();
+            this.buttonEditDep = new System.Windows.Forms.Button();
+            this.textBoxEditDep = new System.Windows.Forms.TextBox();
+            this.LabelEditDep = new System.Windows.Forms.Label();
             this.panelMainForm.SuspendLayout();
+            this.panelMainForm2Blue.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMainForm
@@ -68,11 +72,48 @@
             // panelMainForm2Blue
             // 
             this.panelMainForm2Blue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(144)))), ((int)(((byte)(208)))));
+            this.panelMainForm2Blue.Controls.Add(this.buttonEditDep);
+            this.panelMainForm2Blue.Controls.Add(this.textBoxEditDep);
+            this.panelMainForm2Blue.Controls.Add(this.LabelEditDep);
             this.panelMainForm2Blue.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMainForm2Blue.Location = new System.Drawing.Point(0, 107);
             this.panelMainForm2Blue.Name = "panelMainForm2Blue";
             this.panelMainForm2Blue.Size = new System.Drawing.Size(800, 380);
             this.panelMainForm2Blue.TabIndex = 3;
+            // 
+            // buttonEditDep
+            // 
+            this.buttonEditDep.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonEditDep.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(210)))), ((int)(((byte)(165)))));
+            this.buttonEditDep.FlatAppearance.BorderSize = 2;
+            this.buttonEditDep.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.buttonEditDep.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(210)))), ((int)(((byte)(165)))));
+            this.buttonEditDep.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonEditDep.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonEditDep.Location = new System.Drawing.Point(435, 60);
+            this.buttonEditDep.Name = "buttonEditDep";
+            this.buttonEditDep.Size = new System.Drawing.Size(112, 44);
+            this.buttonEditDep.TabIndex = 6;
+            this.buttonEditDep.Text = "Изменить";
+            this.buttonEditDep.UseVisualStyleBackColor = true;
+            // 
+            // textBoxEditDep
+            // 
+            this.textBoxEditDep.Location = new System.Drawing.Point(12, 60);
+            this.textBoxEditDep.Multiline = true;
+            this.textBoxEditDep.Name = "textBoxEditDep";
+            this.textBoxEditDep.Size = new System.Drawing.Size(401, 44);
+            this.textBoxEditDep.TabIndex = 1;
+            // 
+            // LabelEditDep
+            // 
+            this.LabelEditDep.AutoSize = true;
+            this.LabelEditDep.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LabelEditDep.Location = new System.Drawing.Point(12, 15);
+            this.LabelEditDep.Name = "LabelEditDep";
+            this.LabelEditDep.Size = new System.Drawing.Size(407, 31);
+            this.LabelEditDep.TabIndex = 0;
+            this.LabelEditDep.Text = "Редактировать подразделение";
             // 
             // MainForm
             // 
@@ -84,7 +125,10 @@
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.panelMainForm.ResumeLayout(false);
+            this.panelMainForm2Blue.ResumeLayout(false);
+            this.panelMainForm2Blue.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -95,5 +139,8 @@
         private System.Windows.Forms.Label CloseButton;
         private System.Windows.Forms.Label labelMainForm;
         private System.Windows.Forms.Panel panelMainForm2Blue;
+        private System.Windows.Forms.Label LabelEditDep;
+        private System.Windows.Forms.TextBox textBoxEditDep;
+        private System.Windows.Forms.Button buttonEditDep;
     }
 }
