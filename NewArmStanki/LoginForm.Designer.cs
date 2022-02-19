@@ -176,6 +176,7 @@
             this.Controls.Add(this.LoginField);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoginForm";
