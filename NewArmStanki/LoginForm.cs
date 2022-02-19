@@ -17,7 +17,7 @@ namespace NewArmStanki
         {
             InitializeComponent();
 
-            this.PassField.AutoSize = false;
+            this.PassField.AutoSize = false; //дизайн блок в начале
             this.PassField.Size = new Size(this.PassField.Size.Width, 57);
         }
 
@@ -74,6 +74,18 @@ namespace NewArmStanki
             String loginUser = LoginField.Text; //забираем логин
             String passwordUser = PassField.Text; //забираем пасс
 
+            if (loginUser == "") //Проверяю на пустое значение поля
+            {
+                MessageBox.Show("Введите логин");
+                return;
+            }
+/*
+            if (passwordUser == null)
+            {
+                MessageBox.Show("Введите пароль");
+                return;
+            }
+*/
             DB db = new DB();   //Создали объект для использования бд
 
             DataTable dataTable = new DataTable();
@@ -95,9 +107,9 @@ namespace NewArmStanki
                 MainForm.Show();
             }
             else
-                MessageBox.Show("Не удалось авторизоваться, попробуйте еще раз!");
-            LoginField.Text = null; //Чистим прошлые данные
-            PassField.Text = null;
+                MessageBox.Show("Не удалось авторизоваться, попробуйте еще раз!","Предупреждение");
+                LoginField.Text = null; //Чистим прошлые данные
+                PassField.Text = null;
         }
 
         private void LoginForm_FormClosing(object sender, FormClosingEventArgs e) //Закрытие приложения (проверка)

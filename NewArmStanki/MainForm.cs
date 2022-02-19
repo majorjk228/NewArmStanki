@@ -42,6 +42,7 @@ namespace NewArmStanki
             {
                     if (MessageBox.Show("Вы действительно хотите закрыть приложение?", "Предупреждение", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.No)
                         e.Cancel = true;
+                        //Application.Exit(); 
                     else
                         e.Cancel = false;
             }
