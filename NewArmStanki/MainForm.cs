@@ -37,15 +37,22 @@ namespace NewArmStanki
             db.closeConnection(); //Закрываем соединение с БД (Необходимо чтобы снизить загрузку на бд
         }
 
-        private void MainForm_FormClosing(object sender, FormClosingEventArgs e) //Закрытие приложения (проверка)
+       private void MainForm_FormClosing(object sender, FormClosingEventArgs e) //Закрытие приложения (проверка)
         {
             {
-                    if (MessageBox.Show("Вы действительно хотите закрыть приложение?", "Предупреждение", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.No)
-                        e.Cancel = true;
-                        //Application.Exit(); 
-                    else
-                        e.Cancel = false;
+                if (MessageBox.Show("Вы действительно хотите закрыть приложение?", "Предупреждение", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
+                else
+                    e.Cancel = false;
+                    Environment.Exit(0); //Закрытие всего приложения
             }
+        }
+
+        private void редактироватьПодразделениеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

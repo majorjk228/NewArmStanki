@@ -100,6 +100,7 @@
             this.PassField.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.PassField.UseSystemPasswordChar = true;
             this.PassField.Click += new System.EventHandler(this.PassField_Click);
+            this.PassField.Enter += new System.EventHandler(this.PassField_Enter);
             this.PassField.Leave += new System.EventHandler(this.PassField_Leave);
             // 
             // buttonLogin
@@ -118,6 +119,7 @@
             this.buttonLogin.Text = "Войти";
             this.buttonLogin.UseVisualStyleBackColor = true;
             this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
+            this.AcceptButton = this.buttonLogin; //Принятие на Enter
             // 
             // pictureBox2
             // 
