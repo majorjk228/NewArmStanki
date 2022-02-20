@@ -123,9 +123,9 @@
             this.label1EditDep2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1EditDep2.Location = new System.Drawing.Point(12, 201);
             this.label1EditDep2.Name = "label1EditDep2";
-            this.label1EditDep2.Size = new System.Drawing.Size(429, 31);
+            this.label1EditDep2.Size = new System.Drawing.Size(91, 31);
             this.label1EditDep2.TabIndex = 7;
-            this.label1EditDep2.Text = "Редактировать 2 подразделение";
+            this.label1EditDep2.Text = "Стало";
             // 
             // buttonEditDep
             // 
@@ -142,6 +142,7 @@
             this.buttonEditDep.TabIndex = 6;
             this.buttonEditDep.Text = "Изменить";
             this.buttonEditDep.UseVisualStyleBackColor = true;
+            this.buttonEditDep.Click += new System.EventHandler(this.buttonEditDep_Click);
             // 
             // textBoxEditDep
             // 
@@ -157,9 +158,9 @@
             this.LabelEditDep.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LabelEditDep.Location = new System.Drawing.Point(12, 98);
             this.LabelEditDep.Name = "LabelEditDep";
-            this.LabelEditDep.Size = new System.Drawing.Size(407, 31);
+            this.LabelEditDep.Size = new System.Drawing.Size(81, 31);
             this.LabelEditDep.TabIndex = 0;
-            this.LabelEditDep.Text = "Редактировать подразделение";
+            this.LabelEditDep.Text = "Было";
             // 
             // menuStrip1
             // 

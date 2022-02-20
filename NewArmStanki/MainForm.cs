@@ -22,12 +22,26 @@ namespace NewArmStanki
         {
             DB db = new DB();   //Создали объект для использования бд
 
-            MySqlCommand command = new MySqlCommand("INSERT INTO `test`.`main` (`NAME`, `DEP1`, `DEP2`) VALUES ('Плата 48', @DEP1, 'Цех 10')", db.getConnection());//SQL запрос
-            //MySqlCommand command = new MySqlCommand("INSERT INTO `test`.`main` (`DEP1`) VALUES (@DEP1)", db.getConnection()); //SQL запрос образаюсь к депу
+            //string EditDep = textBoxEditDep.Text;
+            //string RedDep =;
 
-            command.Parameters.Add("@DEP1", MySqlDbType.VarChar).Value = textBoxEditDep.Text; //Забираем из текст бокса текст.
-            //command.Parameters.Add("@DEP1", MySqlDbType.VarChar).Value = textBoxEditDep.Text; //Для других полей аналогично меняем переменную и текста
+            /*  MySqlCommand command = new MySqlCommand("INSERT INTO `test`.`main` (`NAME`, `DEP1`, `DEP2`) VALUES ('Плата 48', @DEP1, 'Цех 10')", db.getConnection());//SQL запрос
+              //MySqlCommand command = new MySqlCommand("INSERT INTO `test`.`main` (`DEP1`) VALUES (@DEP1)", db.getConnection()); //SQL запрос образаюсь к депу
+
+              command.Parameters.Add("@DEP1", MySqlDbType.VarChar).Value = textBoxEditDep.Text; //Забираем из текст бокса текст.
+            */  //command.Parameters.Add("@DEP1", MySqlDbType.VarChar).Value = textBoxEditDep.Text; //Для других полей аналогично меняем переменную и текста
+
+
+            MySqlCommand command = new MySqlCommand("UPDATE main " +
+                "SET DEP1 = @DEP1 WHERE DEP1 = @DEP12", db.getConnection());//SQL запрос
+
+            command.Parameters.Add("@DEP12", MySqlDbType.VarChar).Value = textBoxEditDep.Text;
+
+            command.Parameters.Add("@DEP1", MySqlDbType.VarChar).Value = textBoxEditDep2.Text; //Забираем из текст бокса текст.
+
+
             db.openConnection(); //Открываем соединение с БД
+
 
             if (command.ExecuteNonQuery() == 1) //Если подключение удачное то вывдеется текст
                 MessageBox.Show("Запись добавлена");
@@ -52,7 +66,8 @@ namespace NewArmStanki
 
         private void редактироватьПодразделениеToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            DEPEdit DEPEdit = new DEPEdit(); //Создаем объект с новой формой, выделяем память
+            DEPEdit.Show();
         }
     }
 }

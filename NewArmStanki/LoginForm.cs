@@ -144,6 +144,7 @@ namespace NewArmStanki
                 MessageBox.Show("Не удалось авторизоваться, попробуйте еще раз!","Предупреждение");
                 LoginField.Text = loginUser; //оставляю введенный логин
                 PassField.Text = null; //Чищу только пароль
+                PassField.Focus();
                 return;
         }
 
