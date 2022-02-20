@@ -138,7 +138,6 @@ namespace NewArmStanki
 
             if (dataTable.Rows.Count > 0) //Сколько есть записей
             {
-                MessageBox.Show("Успешная авторизация");
                 this.Hide();
                 MainForm MainForm = new MainForm(); //Создаем объект с новой формой, выделяем память
                 MainForm.Show();
