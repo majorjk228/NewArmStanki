@@ -89,5 +89,25 @@ namespace NewArmStanki.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _728933_document_edit_file_page_paper_icon {
+            get {
+                object obj = ResourceManager.GetObject("728933_document_edit_file_page_paper_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _8675174_ic_fluent_note_edit_regular_icon {
+            get {
+                object obj = ResourceManager.GetObject("8675174_ic_fluent_note_edit_regular_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

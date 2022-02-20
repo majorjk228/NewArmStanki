@@ -108,6 +108,8 @@
     <Content Include="Images\285655_user_icon.png" />
     <Content Include="Images\299105_lock_icon.png" />
     <Content Include="Images\4696674_account_avatar_male_people_person_icon.png" />
+    <None Include="Images\8675174_ic_fluent_note_edit_regular_icon.png" />
+    <None Include="Images\728933_document_edit_file_page_paper_icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

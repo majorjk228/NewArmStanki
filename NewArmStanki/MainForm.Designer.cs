@@ -28,139 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panelMainForm = new System.Windows.Forms.Panel();
-            this.CloseButton = new System.Windows.Forms.Label();
-            this.labelMainForm = new System.Windows.Forms.Label();
-            this.panelMainForm2Blue = new System.Windows.Forms.Panel();
-            this.buttonEditDep2 = new System.Windows.Forms.Button();
-            this.textBoxEditDep2 = new System.Windows.Forms.TextBox();
-            this.label1EditDep2 = new System.Windows.Forms.Label();
-            this.buttonEditDep = new System.Windows.Forms.Button();
-            this.textBoxEditDep = new System.Windows.Forms.TextBox();
-            this.LabelEditDep = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.редактироватьПодразделениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.редактироватьПодразделениеРемонтаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.редактироватьВидРемонтаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panelMainForm.SuspendLayout();
-            this.panelMainForm2Blue.SuspendLayout();
+            this.panelMainForm2Blue = new System.Windows.Forms.Panel();
+            this.panelEditDep = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
+            this.panelMainForm2Blue.SuspendLayout();
+            this.panelEditDep.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // panelMainForm
-            // 
-            this.panelMainForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(210)))), ((int)(((byte)(165)))));
-            this.panelMainForm.Controls.Add(this.CloseButton);
-            this.panelMainForm.Controls.Add(this.labelMainForm);
-            this.panelMainForm.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelMainForm.Location = new System.Drawing.Point(0, 0);
-            this.panelMainForm.Name = "panelMainForm";
-            this.panelMainForm.Size = new System.Drawing.Size(800, 107);
-            this.panelMainForm.TabIndex = 2;
-            // 
-            // CloseButton
-            // 
-            this.CloseButton.Location = new System.Drawing.Point(0, 0);
-            this.CloseButton.Name = "CloseButton";
-            this.CloseButton.Size = new System.Drawing.Size(100, 23);
-            this.CloseButton.TabIndex = 0;
-            // 
-            // labelMainForm
-            // 
-            this.labelMainForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelMainForm.Font = new System.Drawing.Font("Comic Sans MS", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelMainForm.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.labelMainForm.Location = new System.Drawing.Point(0, 0);
-            this.labelMainForm.Name = "labelMainForm";
-            this.labelMainForm.Size = new System.Drawing.Size(800, 107);
-            this.labelMainForm.TabIndex = 0;
-            this.labelMainForm.Text = "Главный экран";
-            this.labelMainForm.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panelMainForm2Blue
-            // 
-            this.panelMainForm2Blue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(144)))), ((int)(((byte)(208)))));
-            this.panelMainForm2Blue.Controls.Add(this.buttonEditDep2);
-            this.panelMainForm2Blue.Controls.Add(this.textBoxEditDep2);
-            this.panelMainForm2Blue.Controls.Add(this.label1EditDep2);
-            this.panelMainForm2Blue.Controls.Add(this.buttonEditDep);
-            this.panelMainForm2Blue.Controls.Add(this.textBoxEditDep);
-            this.panelMainForm2Blue.Controls.Add(this.LabelEditDep);
-            this.panelMainForm2Blue.Controls.Add(this.menuStrip1);
-            this.panelMainForm2Blue.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMainForm2Blue.Location = new System.Drawing.Point(0, 107);
-            this.panelMainForm2Blue.Name = "panelMainForm2Blue";
-            this.panelMainForm2Blue.Size = new System.Drawing.Size(800, 380);
-            this.panelMainForm2Blue.TabIndex = 3;
-            // 
-            // buttonEditDep2
-            // 
-            this.buttonEditDep2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonEditDep2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(210)))), ((int)(((byte)(165)))));
-            this.buttonEditDep2.FlatAppearance.BorderSize = 2;
-            this.buttonEditDep2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
-            this.buttonEditDep2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(210)))), ((int)(((byte)(165)))));
-            this.buttonEditDep2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonEditDep2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonEditDep2.Location = new System.Drawing.Point(435, 246);
-            this.buttonEditDep2.Name = "buttonEditDep2";
-            this.buttonEditDep2.Size = new System.Drawing.Size(112, 44);
-            this.buttonEditDep2.TabIndex = 9;
-            this.buttonEditDep2.Text = "Изменить";
-            this.buttonEditDep2.UseVisualStyleBackColor = true;
-            // 
-            // textBoxEditDep2
-            // 
-            this.textBoxEditDep2.Location = new System.Drawing.Point(12, 246);
-            this.textBoxEditDep2.Multiline = true;
-            this.textBoxEditDep2.Name = "textBoxEditDep2";
-            this.textBoxEditDep2.Size = new System.Drawing.Size(401, 44);
-            this.textBoxEditDep2.TabIndex = 8;
-            // 
-            // label1EditDep2
-            // 
-            this.label1EditDep2.AutoSize = true;
-            this.label1EditDep2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1EditDep2.Location = new System.Drawing.Point(12, 201);
-            this.label1EditDep2.Name = "label1EditDep2";
-            this.label1EditDep2.Size = new System.Drawing.Size(91, 31);
-            this.label1EditDep2.TabIndex = 7;
-            this.label1EditDep2.Text = "Стало";
-            // 
-            // buttonEditDep
-            // 
-            this.buttonEditDep.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonEditDep.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(210)))), ((int)(((byte)(165)))));
-            this.buttonEditDep.FlatAppearance.BorderSize = 2;
-            this.buttonEditDep.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
-            this.buttonEditDep.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(210)))), ((int)(((byte)(165)))));
-            this.buttonEditDep.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonEditDep.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonEditDep.Location = new System.Drawing.Point(435, 143);
-            this.buttonEditDep.Name = "buttonEditDep";
-            this.buttonEditDep.Size = new System.Drawing.Size(112, 44);
-            this.buttonEditDep.TabIndex = 6;
-            this.buttonEditDep.Text = "Изменить";
-            this.buttonEditDep.UseVisualStyleBackColor = true;
-            this.buttonEditDep.Click += new System.EventHandler(this.buttonEditDep_Click);
-            // 
-            // textBoxEditDep
-            // 
-            this.textBoxEditDep.Location = new System.Drawing.Point(12, 143);
-            this.textBoxEditDep.Multiline = true;
-            this.textBoxEditDep.Name = "textBoxEditDep";
-            this.textBoxEditDep.Size = new System.Drawing.Size(401, 44);
-            this.textBoxEditDep.TabIndex = 1;
-            // 
-            // LabelEditDep
-            // 
-            this.LabelEditDep.AutoSize = true;
-            this.LabelEditDep.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.LabelEditDep.Location = new System.Drawing.Point(12, 98);
-            this.LabelEditDep.Name = "LabelEditDep";
-            this.LabelEditDep.Size = new System.Drawing.Size(81, 31);
-            this.LabelEditDep.TabIndex = 0;
-            this.LabelEditDep.Text = "Было";
             // 
             // menuStrip1
             // 
@@ -171,7 +51,7 @@
             this.редактироватьВидРемонтаToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 29);
+            this.menuStrip1.Size = new System.Drawing.Size(787, 29);
             this.menuStrip1.TabIndex = 10;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -185,7 +65,7 @@
             // редактироватьПодразделениеРемонтаToolStripMenuItem
             // 
             this.редактироватьПодразделениеРемонтаToolStripMenuItem.Name = "редактироватьПодразделениеРемонтаToolStripMenuItem";
-            this.редактироватьПодразделениеРемонтаToolStripMenuItem.Size = new System.Drawing.Size(235, 20);
+            this.редактироватьПодразделениеРемонтаToolStripMenuItem.Size = new System.Drawing.Size(308, 25);
             this.редактироватьПодразделениеРемонтаToolStripMenuItem.Text = "Редактировать подразделение ремонта";
             // 
             // редактироватьВидРемонтаToolStripMenuItem
@@ -194,42 +74,91 @@
             this.редактироватьВидРемонтаToolStripMenuItem.Size = new System.Drawing.Size(224, 25);
             this.редактироватьВидРемонтаToolStripMenuItem.Text = "Редактировать вид ремонта";
             // 
+            // panelMainForm2Blue
+            // 
+            this.panelMainForm2Blue.BackColor = System.Drawing.Color.LightGray;
+            this.panelMainForm2Blue.Controls.Add(this.panelEditDep);
+            this.panelMainForm2Blue.Controls.Add(this.menuStrip1);
+            this.panelMainForm2Blue.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelMainForm2Blue.Location = new System.Drawing.Point(0, 0);
+            this.panelMainForm2Blue.Name = "panelMainForm2Blue";
+            this.panelMainForm2Blue.Size = new System.Drawing.Size(787, 483);
+            this.panelMainForm2Blue.TabIndex = 3;
+            // 
+            // panelEditDep
+            // 
+            this.panelEditDep.AccessibleDescription = "";
+            this.panelEditDep.AccessibleName = "";
+            this.panelEditDep.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panelEditDep.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelEditDep.Controls.Add(this.label1);
+            this.panelEditDep.Controls.Add(this.pictureBox1);
+            this.panelEditDep.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panelEditDep.Location = new System.Drawing.Point(52, 63);
+            this.panelEditDep.Name = "panelEditDep";
+            this.panelEditDep.Size = new System.Drawing.Size(298, 175);
+            this.panelEditDep.TabIndex = 15;
+            this.panelEditDep.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.panelEditDep.MouseLeave += new System.EventHandler(this.panelEditDep_MouseLeave);
+            this.panelEditDep.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelEditDep_MouseMove);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(44, 136);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(206, 19);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Редактировать подразделение";
+            this.label1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.label1.MouseLeave += new System.EventHandler(this.panelEditDep_MouseLeave);
+            this.label1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.label1_MouseMove);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::NewArmStanki.Properties.Resources._8675174_ic_fluent_note_edit_regular_icon;
+            this.pictureBox1.Location = new System.Drawing.Point(99, 23);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(95, 92);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.MouseLeave += new System.EventHandler(this.panelEditDep_MouseLeave);
+            this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelEditDep_MouseMove);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 487);
+            this.ClientSize = new System.Drawing.Size(787, 483);
             this.Controls.Add(this.panelMainForm2Blue);
-            this.Controls.Add(this.panelMainForm);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MainForm";
+            this.Text = "Редактор";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
-            this.panelMainForm.ResumeLayout(false);
-            this.panelMainForm2Blue.ResumeLayout(false);
-            this.panelMainForm2Blue.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.panelMainForm2Blue.ResumeLayout(false);
+            this.panelMainForm2Blue.PerformLayout();
+            this.panelEditDep.ResumeLayout(false);
+            this.panelEditDep.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panelMainForm;
-        private System.Windows.Forms.Label CloseButton;
-        private System.Windows.Forms.Label labelMainForm;
-        private System.Windows.Forms.Panel panelMainForm2Blue;
-        private System.Windows.Forms.Label LabelEditDep;
-        private System.Windows.Forms.TextBox textBoxEditDep;
-        private System.Windows.Forms.Button buttonEditDep;
-        private System.Windows.Forms.Button buttonEditDep2;
-        private System.Windows.Forms.TextBox textBoxEditDep2;
-        private System.Windows.Forms.Label label1EditDep2;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem редактироватьПодразделениеToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem редактироватьПодразделениеРемонтаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem редактироватьВидРемонтаToolStripMenuItem;
+        private System.Windows.Forms.Panel panelMainForm2Blue;
+        private System.Windows.Forms.Panel panelEditDep;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
     }
 }

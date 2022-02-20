@@ -17,40 +17,6 @@ namespace NewArmStanki
         {
             InitializeComponent();
         }
-
-        private void buttonEditDep_Click(object sender, EventArgs e)
-        {
-            DB db = new DB();   //Создали объект для использования бд
-
-            //string EditDep = textBoxEditDep.Text;
-            //string RedDep =;
-
-            /*  MySqlCommand command = new MySqlCommand("INSERT INTO `test`.`main` (`NAME`, `DEP1`, `DEP2`) VALUES ('Плата 48', @DEP1, 'Цех 10')", db.getConnection());//SQL запрос
-              //MySqlCommand command = new MySqlCommand("INSERT INTO `test`.`main` (`DEP1`) VALUES (@DEP1)", db.getConnection()); //SQL запрос образаюсь к депу
-
-              command.Parameters.Add("@DEP1", MySqlDbType.VarChar).Value = textBoxEditDep.Text; //Забираем из текст бокса текст.
-            */  //command.Parameters.Add("@DEP1", MySqlDbType.VarChar).Value = textBoxEditDep.Text; //Для других полей аналогично меняем переменную и текста
-
-
-            MySqlCommand command = new MySqlCommand("UPDATE main " +
-                "SET DEP1 = @DEP1 WHERE DEP1 = @DEP12", db.getConnection());//SQL запрос
-
-            command.Parameters.Add("@DEP12", MySqlDbType.VarChar).Value = textBoxEditDep.Text;
-
-            command.Parameters.Add("@DEP1", MySqlDbType.VarChar).Value = textBoxEditDep2.Text; //Забираем из текст бокса текст.
-
-
-            db.openConnection(); //Открываем соединение с БД
-
-
-            if (command.ExecuteNonQuery() == 1) //Если подключение удачное то вывдеется текст
-                MessageBox.Show("Запись добавлена");
-            else
-                MessageBox.Show("Запись Не Добавлена", "Ошибка");
-
-            db.closeConnection(); //Закрываем соединение с БД (Необходимо чтобы снизить загрузку на бд
-        }
-
        private void MainForm_FormClosing(object sender, FormClosingEventArgs e) //Закрытие приложения (проверка)
         {
             {
@@ -68,6 +34,26 @@ namespace NewArmStanki
         {
             DEPEdit DEPEdit = new DEPEdit(); //Создаем объект с новой формой, выделяем память
             DEPEdit.Show();
+        }
+
+        private void panelEditDep_MouseMove(object sender, MouseEventArgs e)
+        {
+            panelEditDep.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(184)))), ((int)(((byte)(193)))));
+        }
+
+        private void panelEditDep_MouseLeave(object sender, EventArgs e)
+        {
+            panelEditDep.BackColor = Color.LightGray;
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            DEPEdit DEPEdit = new DEPEdit(); //Создаем объект с новой формой, выделяем память
+            DEPEdit.Show();
+        }
+        private void label1_MouseMove(object sender, EventArgs e)
+        {
+            panelEditDep.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(184)))), ((int)(((byte)(193)))));
         }
     }
 }
