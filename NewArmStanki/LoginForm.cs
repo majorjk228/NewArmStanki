@@ -18,10 +18,11 @@ namespace NewArmStanki
             InitializeComponent();
 
             this.PassField.AutoSize = false; //дизайн блок в начале
-            this.PassField.Size = new Size(this.PassField.Size.Width, 46);
+            this.PassField.Size = new Size(this.PassField.Size.Width, 34);
             this.LoginField.Text = "Введите login";
             this.LoginField.ForeColor = Color.Gray;
             this.PassField.UseSystemPasswordChar = false;
+            this. PassField.Font = new Font(PassField.Font.FontFamily, 13);
             this.PassField.Text = "Введите пароль";
             this.PassField.ForeColor = Color.Gray;
         }
@@ -98,6 +99,7 @@ namespace NewArmStanki
         {
             if (LoginField.Text == "")
             {
+                LoginField.Font = new Font(LoginField.Font.FontFamily, 13);
                 LoginField.Text = "Введите login";
                 LoginField.ForeColor = Color.Gray;
                 return;
@@ -108,6 +110,7 @@ namespace NewArmStanki
             if (PassField.Text == "")
             {
                 PassField.UseSystemPasswordChar = false;
+                PassField.Font = new Font(PassField.Font.FontFamily, 13);
                 PassField.Text = "Введите пароль";
                 PassField.ForeColor = Color.Gray;
                 return;

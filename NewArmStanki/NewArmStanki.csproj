@@ -107,6 +107,7 @@
   <ItemGroup>
     <Content Include="Images\285655_user_icon.png" />
     <Content Include="Images\299105_lock_icon.png" />
+    <Content Include="Images\4696674_account_avatar_male_people_person_icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

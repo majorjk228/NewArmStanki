@@ -79,5 +79,15 @@ namespace NewArmStanki.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _4696674_account_avatar_male_people_person_icon {
+            get {
+                object obj = ResourceManager.GetObject("4696674_account_avatar_male_people_person_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
