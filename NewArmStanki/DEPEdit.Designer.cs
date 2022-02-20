@@ -59,10 +59,10 @@
             // textBoxEditDep
             // 
             this.textBoxEditDep.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxEditDep.Location = new System.Drawing.Point(12, 77);
+            this.textBoxEditDep.Location = new System.Drawing.Point(12, 110);
             this.textBoxEditDep.Multiline = true;
             this.textBoxEditDep.Name = "textBoxEditDep";
-            this.textBoxEditDep.Size = new System.Drawing.Size(401, 44);
+            this.textBoxEditDep.Size = new System.Drawing.Size(401, 33);
             this.textBoxEditDep.TabIndex = 1;
             this.textBoxEditDep.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -96,7 +96,7 @@
             // 
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(12, 127);
+            this.comboBox1.Location = new System.Drawing.Point(12, 68);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(401, 39);
             this.comboBox1.TabIndex = 10;
@@ -116,7 +116,7 @@
             // 
             this.labelOldDep.AutoSize = true;
             this.labelOldDep.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelOldDep.Location = new System.Drawing.Point(117, 54);
+            this.labelOldDep.Location = new System.Drawing.Point(117, 45);
             this.labelOldDep.Name = "labelOldDep";
             this.labelOldDep.Size = new System.Drawing.Size(198, 20);
             this.labelOldDep.TabIndex = 8;
