@@ -1,4 +1,4 @@
-﻿using MySql.Data.MySqlClient;
+﻿//using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Oracle.ManagedDataAccess.Client;
 
 
 namespace NewArmStanki
@@ -27,18 +28,31 @@ namespace NewArmStanki
 
             DataTable dataTable = new DataTable();
 
-            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            //MySqlDataAdapter adapter = new MySqlDataAdapter();
+            OracleDataAdapter adapter = new OracleDataAdapter();
 
-            MySqlCommand command = new MySqlCommand("select DEP1 from main", db.getConnection());
+            // OracleCommand command = new OracleCommand("select * from main" + comboBox1.SelectedItem.ToString() + "'", db.getConnection());
+            OracleCommand command = new OracleCommand("select * from main", db.getConnection());
 
             adapter.SelectCommand = command; // выбрали нужную команду и выполнили
             adapter.Fill(dataTable); //Данные которые получили, положили в дата тейбл, Обращаюсь к каждому элементу БД
-
-            comboBox1.DataSource = dataTable;
-            comboBox1.DisplayMember = "DEP1";
-            comboBox1.ValueMember = "DEP1";
-            comboBox1.DisplayMember.ToString();
-            comboBox1.SelectedValueChanged += new EventHandler(comboBox1_SelectedValueChanged);
+            if (dataTable.Rows.Count > 0) //Сколько есть записей
+            {
+                comboBox1.DataSource = dataTable;
+                comboBox1.DisplayMember = "DEP1";
+                comboBox1.ValueMember = "DEP1";
+                comboBox1.DisplayMember.ToString();
+                comboBox1.SelectedValueChanged += new EventHandler(comboBox1_SelectedValueChanged);
+            }
+            else
+                MessageBox.Show(":(");
+            /*OracleDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                colCardNumber = reader.GetValue(0).ToString();
+                colAccountNumber = reader.GetValue(1).ToString();
+            }
+            reader.Close(); */
         }
 
         private void comboBox1_SelectedValueChanged(object sender, EventArgs e)
@@ -72,17 +86,17 @@ namespace NewArmStanki
             DB db = new DB();   //Создали объект для использования бд
 
 
-            MySqlCommand command = new MySqlCommand("UPDATE main SET DEP1 = @DEP1 WHERE DEP1 = @DEP12", db.getConnection());//SQL запрос
+            OracleCommand command = new OracleCommand("UPDATE main SET DEP1 = @DEP1 WHERE DEP1 = @DEP12", db.getConnection());//SQL запрос
 
             if (OldDep2 != "")
             {
-                command.Parameters.Add("@DEP12", MySqlDbType.VarChar).Value = OldDep2;
+                command.Parameters.Add("@DEP12", SqlDbType.VarChar).Value = OldDep2;
                     
             }
 
             if (NewDep2 != "")
             { 
-                command.Parameters.Add("@DEP1", MySqlDbType.VarChar).Value = NewDep2; //Забираем из текст бокса текст. 
+                command.Parameters.Add("@DEP1", SqlDbType.VarChar).Value = NewDep2; //Забираем из текст бокса текст. 
             }
 
             db.openConnection(); //Открываем соединение с БД

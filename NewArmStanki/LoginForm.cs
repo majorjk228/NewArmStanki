@@ -1,4 +1,4 @@
-﻿using MySql.Data.MySqlClient;
+﻿//using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Oracle.ManagedDataAccess.Client;
 
 namespace NewArmStanki
 {
@@ -127,11 +128,12 @@ namespace NewArmStanki
 
             DataTable dataTable = new DataTable();
 
-            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            //MySqlDataAdapter adapter = new MySqlDataAdapter();
+            OracleDataAdapter adapter = new OracleDataAdapter();
 
-            MySqlCommand command = new MySqlCommand("select * from users where login = @uL and password = @uP", db.getConnection()); //команды для БД(защита от взлома)
-            command.Parameters.Add("@uL", MySqlDbType.VarChar).Value = loginUser; //Указываю заместо заглушки беру данные из переменной
-            command.Parameters.Add("@uP", MySqlDbType.VarChar).Value = passwordUser; //Указываю заместо заглушки беру данные из переменной
+            OracleCommand command = new OracleCommand("select * from users where name = :uL and password = :uP", db.getConnection()); //команды для БД(защита от взлома)
+            command.Parameters.Add("uL", OracleDbType.Varchar2).Value = loginUser; //Указываю заместо заглушки беру данные из переменной
+            command.Parameters.Add("uP", OracleDbType.Varchar2).Value = passwordUser; //Указываю заместо заглушки беру данные из переменной
 
             adapter.SelectCommand = command; // выбрали нужную команду и выполнили
             adapter.Fill(dataTable); //Данные которые получили, положили в дата тейбл, Обращаюсь к каждому элементу БД
