@@ -45,14 +45,7 @@ namespace NewArmStanki
                 comboBox1.SelectedValueChanged += new EventHandler(comboBox1_SelectedValueChanged);
             }
             else
-                MessageBox.Show(":(");
-            /*OracleDataReader reader = command.ExecuteReader();
-            while (reader.Read())
-            {
-                colCardNumber = reader.GetValue(0).ToString();
-                colAccountNumber = reader.GetValue(1).ToString();
-            }
-            reader.Close(); */
+                MessageBox.Show("Не удалось загрузить подразделения");
         }
 
         private void comboBox1_SelectedValueChanged(object sender, EventArgs e)
