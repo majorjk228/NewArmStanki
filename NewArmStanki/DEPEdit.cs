@@ -28,10 +28,8 @@ namespace NewArmStanki
 
             DataTable dataTable = new DataTable();
 
-            //MySqlDataAdapter adapter = new MySqlDataAdapter();
             OracleDataAdapter adapter = new OracleDataAdapter();
 
-            // OracleCommand command = new OracleCommand("select * from main" + comboBox1.SelectedItem.ToString() + "'", db.getConnection());
             OracleCommand command = new OracleCommand("select * from main", db.getConnection());
 
             adapter.SelectCommand = command; // выбрали нужную команду и выполнили
@@ -42,24 +40,9 @@ namespace NewArmStanki
                 comboBox1.DisplayMember = "DEP1";
                 comboBox1.ValueMember = "DEP1";
                 comboBox1.DisplayMember.ToString();
-                comboBox1.SelectedValueChanged += new EventHandler(comboBox1_SelectedValueChanged);
             }
             else
                 MessageBox.Show("Не удалось загрузить подразделения");
-        }
-
-        private void comboBox1_SelectedValueChanged(object sender, EventArgs e)
-        {
-            if (comboBox1.SelectedIndex != -1)
-           // {
-                textBoxEditDep.Text = comboBox1.SelectedValue.ToString();
-                string s = textBoxEditDep.Text;
-                //{
-                    // OldDep += new EventHandler(buttonEditDep_Click);
-                //    buttonEditDep_Click(s);
-                //}
-                //  buttonEditDep_Click(s);
-           // }
         }
 
         private void buttonEditDep_Click(object sender, EventArgs e)
@@ -67,9 +50,9 @@ namespace NewArmStanki
 
             char[] MyChar = { ' ' };
 
-            string OldDep = textBoxEditDep.Text; //Кладем в переменную значение со строки
+            string OldDep = comboBox1.SelectedValue.ToString(); //Кладем в переменную значение со строки
             string OldDep1 = OldDep.TrimStart(MyChar); //Не учитываем пробелы в начале
-            string OldDep2 = OldDep1.TrimEnd(MyChar); //Не учитываем пробелы в Конце
+            string OldDep2 = OldDep1.TrimEnd(MyChar); //Не учитываем пробелы в Конце textBoxEditDep 2
 
 
             string NewDep = textBoxEdit2.Text; //Кладем в переменную значение со строки
@@ -79,26 +62,28 @@ namespace NewArmStanki
             DB db = new DB();   //Создали объект для использования бд
 
 
-            OracleCommand command = new OracleCommand("UPDATE main SET DEP1 = @DEP1 WHERE DEP1 = @DEP12", db.getConnection());//SQL запрос
+            OracleCommand command = new OracleCommand("UPDATE main SET DEP1 = :DepNew " +
+                "where DEP1 = :DepOld", db.getConnection());//SQL запрос
+
+            if (NewDep2 != "")
+            {
+                command.Parameters.Add("DepNew", OracleDbType.Varchar2).Value = NewDep2; //Забираем из текст бокса текст. 
+            }
+            else
+                MessageBox.Show("Укажите новое подразделение");
 
             if (OldDep2 != "")
             {
-                command.Parameters.Add("@DEP12", SqlDbType.VarChar).Value = OldDep2;
-                    
-            }
-
-            if (NewDep2 != "")
-            { 
-                command.Parameters.Add("@DEP1", SqlDbType.VarChar).Value = NewDep2; //Забираем из текст бокса текст. 
+                command.Parameters.Add("DepOld", OracleDbType.Varchar2).Value = OldDep2;       
             }
 
             db.openConnection(); //Открываем соединение с БД
 
-            if (command.ExecuteNonQuery() == 1) //Если подключение удачное то вывдеется текст, если отработало
+            if (command.ExecuteNonQuery() == 1) //Если выполнение удачное то вывдеется текст, если отработало
                 MessageBox.Show("Запись обновлена");
             else
                 MessageBox.Show("Не верно введено текущее подразделение", "Ошибка");
-
+            
             db.closeConnection(); //Закрываем соединение с БД (Необходимо чтобы снизить загрузку на бд
         }
     }
