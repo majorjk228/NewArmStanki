@@ -89,6 +89,7 @@ namespace NewArmStanki
             this.buttonEditDep.TabIndex = 6;
             this.buttonEditDep.Text = "Удалить";
             this.buttonEditDep.UseVisualStyleBackColor = false;
+            this.buttonEditDep.Click += new System.EventHandler(this.buttonEditDep_Click);
             // 
             // LabelEditDep
             // 

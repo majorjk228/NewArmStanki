@@ -40,5 +40,43 @@ namespace NewArmStanki
             else
                 MessageBox.Show("Не удалось загрузить инвентарный номер", "Ошибка");
         }
+
+        private void buttonEditDep_Click(object sender, EventArgs e)
+        {
+            if (comboBox2.Text == "")
+            {
+                MessageBox.Show("Не выбран инвентарный номер", "Ошибка");
+                return;
+            }          
+            string invent = comboBox2.SelectedValue.ToString();
+
+            DB db = new DB();   //Создали объект для использования бд
+
+            OracleCommand command = new OracleCommand("DELETE main where ITEMNAME = :inv", db.getConnection());//Oracle запрос
+
+            if (invent == "")
+            {
+                MessageBox.Show("Укажите инвентарный номер", "Ошибка");
+            }
+
+            DialogResult dialogResult = MessageBox.Show("Вы действительно хотите удалить " + invent + "?", "Внимание!", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                command.Parameters.Add("inv", OracleDbType.Varchar2).Value = invent;
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                return;
+            }
+
+            db.openConnection(); //Открываем соединение с БД
+
+            if (command.ExecuteNonQuery() == 1) //Если выполнение удачное то вывдеется текст, если отработало
+                MessageBox.Show("Запись удалена!");
+            else
+                MessageBox.Show("Запись не удалена!", "Ошибка");
+
+            db.closeConnection(); //Закрываем соединение с БД (Необходимо чтобы снизить загрузку на бд)
+        }
     }
 }
