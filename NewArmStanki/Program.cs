@@ -15,10 +15,11 @@ namespace NewArmStanki
         static void Main()
         {
             Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm());
-            //Application.Run(new MainForm());
-            //Application.Run(new DEPEdit());
+            Application.SetCompatibleTextRenderingDefault(false);  
+            // Application.Run(new LoginForm());
+            Application.Run(new MainForm());
+            // Application.Run(new RemEdit());
+            //Application.Run(new ObslEdit());
         }
     }
 }

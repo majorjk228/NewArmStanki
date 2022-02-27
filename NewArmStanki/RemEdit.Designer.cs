@@ -1,6 +1,6 @@
 ﻿namespace NewArmStanki
 {
-    partial class DEPEdit
+    partial class RemEdit
     {
         /// <summary>
         /// Required designer variable.
@@ -35,6 +35,8 @@
             this.labelNewDep = new System.Windows.Forms.Label();
             this.labelOldDep = new System.Windows.Forms.Label();
             this.textBoxEdit2 = new System.Windows.Forms.TextBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelMainForm2Blue.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -42,13 +44,13 @@
             // 
             this.buttonEditDep.BackColor = System.Drawing.Color.White;
             this.buttonEditDep.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonEditDep.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(210)))), ((int)(((byte)(165)))));
+            this.buttonEditDep.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(155)))), ((int)(((byte)(216)))));
             this.buttonEditDep.FlatAppearance.BorderSize = 2;
-            this.buttonEditDep.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
-            this.buttonEditDep.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(210)))), ((int)(((byte)(165)))));
+            this.buttonEditDep.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(155)))), ((int)(((byte)(216)))));
+            this.buttonEditDep.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(155)))), ((int)(((byte)(216)))));
             this.buttonEditDep.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonEditDep.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonEditDep.Location = new System.Drawing.Point(160, 228);
+            this.buttonEditDep.Location = new System.Drawing.Point(199, 336);
             this.buttonEditDep.Name = "buttonEditDep";
             this.buttonEditDep.Size = new System.Drawing.Size(112, 44);
             this.buttonEditDep.TabIndex = 6;
@@ -60,7 +62,7 @@
             // 
             this.LabelEditDep.AutoSize = true;
             this.LabelEditDep.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.LabelEditDep.Location = new System.Drawing.Point(12, 9);
+            this.LabelEditDep.Location = new System.Drawing.Point(52, 9);
             this.LabelEditDep.Name = "LabelEditDep";
             this.LabelEditDep.Size = new System.Drawing.Size(407, 31);
             this.LabelEditDep.TabIndex = 0;
@@ -68,7 +70,9 @@
             // 
             // panelMainForm2Blue
             // 
-            this.panelMainForm2Blue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(144)))), ((int)(((byte)(208)))));
+            this.panelMainForm2Blue.BackColor = System.Drawing.Color.LightGray;
+            this.panelMainForm2Blue.Controls.Add(this.label1);
+            this.panelMainForm2Blue.Controls.Add(this.comboBox2);
             this.panelMainForm2Blue.Controls.Add(this.comboBox1);
             this.panelMainForm2Blue.Controls.Add(this.labelNewDep);
             this.panelMainForm2Blue.Controls.Add(this.labelOldDep);
@@ -79,25 +83,26 @@
             this.panelMainForm2Blue.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMainForm2Blue.Location = new System.Drawing.Point(0, 0);
             this.panelMainForm2Blue.Name = "panelMainForm2Blue";
-            this.panelMainForm2Blue.Size = new System.Drawing.Size(430, 293);
+            this.panelMainForm2Blue.Size = new System.Drawing.Size(529, 388);
             this.panelMainForm2Blue.TabIndex = 4;
             // 
             // comboBox1
             // 
             this.comboBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(17, 81);
+            this.comboBox1.Location = new System.Drawing.Point(61, 161);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(401, 39);
             this.comboBox1.TabIndex = 10;
-            this.comboBox1.Click += new System.EventHandler(this.comboBox1_Click);
+            this.comboBox1.DropDown += new System.EventHandler(this.comboBox1_Click);
             // 
             // labelNewDep
             // 
             this.labelNewDep.AutoSize = true;
             this.labelNewDep.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelNewDep.Location = new System.Drawing.Point(117, 146);
+            this.labelNewDep.Location = new System.Drawing.Point(174, 219);
             this.labelNewDep.Name = "labelNewDep";
             this.labelNewDep.Size = new System.Drawing.Size(182, 20);
             this.labelNewDep.TabIndex = 9;
@@ -107,7 +112,7 @@
             // 
             this.labelOldDep.AutoSize = true;
             this.labelOldDep.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelOldDep.Location = new System.Drawing.Point(117, 45);
+            this.labelOldDep.Location = new System.Drawing.Point(158, 138);
             this.labelOldDep.Name = "labelOldDep";
             this.labelOldDep.Size = new System.Drawing.Size(198, 20);
             this.labelOldDep.TabIndex = 8;
@@ -115,24 +120,52 @@
             // 
             // textBoxEdit2
             // 
+            this.textBoxEdit2.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.textBoxEdit2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxEdit2.Location = new System.Drawing.Point(12, 169);
+            this.textBoxEdit2.Location = new System.Drawing.Point(61, 256);
             this.textBoxEdit2.Multiline = true;
             this.textBoxEdit2.Name = "textBoxEdit2";
             this.textBoxEdit2.Size = new System.Drawing.Size(401, 44);
             this.textBoxEdit2.TabIndex = 7;
+            this.textBoxEdit2.Text = "Цех ";
             this.textBoxEdit2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxEdit2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.textBoxEdit2_MouseClick);
+            this.textBoxEdit2.TextChanged += new System.EventHandler(this.textBoxEdit2_TextChanged);
+            this.textBoxEdit2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxEdit2_KeyPress);
             // 
-            // DEPEdit
+            // comboBox2
+            // 
+            this.comboBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(61, 74);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(401, 39);
+            this.comboBox2.TabIndex = 11;
+            this.comboBox2.DropDown += new System.EventHandler(this.comboBox2_DropDown);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(174, 51);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(163, 20);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Инвентарный номер";
+            // 
+            // RemEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(430, 293);
+            this.ClientSize = new System.Drawing.Size(529, 388);
             this.Controls.Add(this.panelMainForm2Blue);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
-            this.Name = "DEPEdit";
+            this.Name = "RemEdit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DEPEdit";
+            this.Text = "Редактор ремонтного подразделения";
             this.panelMainForm2Blue.ResumeLayout(false);
             this.panelMainForm2Blue.PerformLayout();
             this.ResumeLayout(false);
@@ -147,5 +180,7 @@
         private System.Windows.Forms.Label labelNewDep;
         private System.Windows.Forms.Label labelOldDep;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label label1;
     }
 }
