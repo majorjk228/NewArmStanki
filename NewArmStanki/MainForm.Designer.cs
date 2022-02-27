@@ -72,6 +72,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(325, 175);
             this.panel2.TabIndex = 16;
+            this.panel2.Click += new System.EventHandler(this.pictureBox3_Click);
             this.panel2.MouseLeave += new System.EventHandler(this.panel2_MouseLeave);
             this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseMove);
             // 
@@ -84,6 +85,7 @@
             this.label3.Size = new System.Drawing.Size(111, 19);
             this.label3.TabIndex = 12;
             this.label3.Text = "Удалить из ППР";
+            this.label3.Click += new System.EventHandler(this.pictureBox3_Click);
             this.label3.MouseLeave += new System.EventHandler(this.panel2_MouseLeave);
             this.label3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseMove);
             // 
